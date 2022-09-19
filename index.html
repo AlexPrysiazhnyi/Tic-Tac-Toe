@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/overlays.css">
     <link rel="stylesheet" href="styles/configuration.css">
+    <link rel="stylesheet" href="styles/game.css">
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/game.js" defer></script>
+    <script src="scripts/app.js" defer></script>
   </head>
   <body>
     <div id="backdrop"></div>
@@ -23,10 +27,11 @@
         <form>
           <div class="form-control">
             <label for="playername">Player name</label>
-            <input type="text" name="playername" id="playername" />
+            <input type="text" name="playername" id="playername"/>
+            <p class="error">Please enter a valid name!</p>
           </div>
           <div>
-            <button type="button" class="btn-alt">Cancel</button>
+            <button type="reset" class="btn-alt">Cancel</button>
             <button type="submit">Confirm</button>
           </div>
         </form>
@@ -36,38 +41,40 @@
           <li>
             <article>
               <h2>Player 1</h2>
-              <h3>PLAYER NAME</h3>
+              <h3 id="1">PLAYER NAME</h3>
               <p class="player-symbol">X</p>
-              <button class="btn-alt">Edit</button>
+              <button class="btn-alt" id="edit-first-player" data-player-id="1">Edit</button>
             </article>
           </li>
           <li>
             <article>
               <h2>Player 2</h2>
-              <h3>PLAYER NAME</h3>
+              <h3 id="2">PLAYER NAME</h3>
               <p class="player-symbol">O</p>
-              <button class="btn-alt">Edit</button>
+              <button class="btn-alt" id="edit-second-player" data-player-id="2">Edit</button>
             </article>
           </li>
         </ol>
         <button>Start New Game</button>
       </section>
       <section id="game-interface">
-        <h3>You won, <span id="player-winner">PLAYER NAME</span>!</h3>
-        <p>Click "Start New Game" above, to start a new game!</p>
+        <article id="end-of-the-game">
+          <h2>You won, <span id="player-winner">PLAYER NAME</span>!</h2>
+          <p>Click "Start New Game" above, to start a new game!</p>
+        </article>
         <p>It's your turn <span id="active-player">PLAYER NAME</span>!</p>
-        <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-
-            <li></li>
+        <ol id="game-board">
+            <li class="clicked">X</li>
             <li></li>
             <li></li>
 
             <li></li>
+            <li class="clicked">O</li>
+            <li></li>
+
             <li></li>
             <li></li>
+            <li class="clicked">X</li>
         </ol>
       </section>
     </main>

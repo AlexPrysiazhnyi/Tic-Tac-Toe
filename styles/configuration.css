@@ -64,3 +64,15 @@
     color: rgb(47, 4, 82);
     margin: 0.75rem 0;
 }
+
+input.error {
+    border-color: rgb(136, 2, 2);
+    background-color: rgb(253, 219, 219);
+}
+
+p.error {
+    margin: 0.5rem 0 0.75rem 0;
+    font-weight: bold;
+    color: rgb(136, 2, 2);
+    display: none;
+}
