@@ -1,7 +1,7 @@
 #game-interface {
     text-align: center;
     margin: 2rem 0 2rem 0;
-    /* display: none; */
+    display: none;
 }
 
 #end-of-the-game {
@@ -56,4 +56,5 @@
     background-color: rgb(112, 13, 204);
     color: white;
     cursor: default;
+    pointer-events: none;
 }

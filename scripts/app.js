@@ -4,7 +4,11 @@ const editPlayerConfigForm = playerConfigurationForm.querySelector("form");
 const inputDiv = document.querySelector(".form-control");
 const inputElement = document.getElementById("playername");
 const errorParagraph = inputDiv.lastElementChild;
+const gameInterfaceSection = document.getElementById('game-interface');
+const gameBoardOrderedList = document.getElementById('game-board');
+const activePlayerNameSpan = document.getElementById('active-player');
 
+let playerNumber = 0;
 let projectId;
 const players = [
   {
@@ -14,16 +18,18 @@ const players = [
     symbol: "O",
   },
 ];
-// const playerListItems = document.querySelectorAll('li');
 
 const editFirstPlayerButton = document.getElementById("edit-first-player");
 const editSecondPlayerButton = document.getElementById("edit-second-player");
 const cancelConfigFormButton = playerConfigurationForm.querySelector(
   "button:first-of-type"
 );
+const startNewGameButton = document.getElementById('start-new-game');
 
 editFirstPlayerButton.addEventListener("click", openPlayerConfiguration);
 editSecondPlayerButton.addEventListener("click", openPlayerConfiguration);
 backdrop.addEventListener("click", closePlayerConfiguration);
 cancelConfigFormButton.addEventListener("click", closePlayerConfiguration);
 editPlayerConfigForm.addEventListener("submit", confirmPlayerConfig);
+startNewGameButton.addEventListener('click', startNewGame);
+gameBoardOrderedList.addEventListener('click', selectField);
