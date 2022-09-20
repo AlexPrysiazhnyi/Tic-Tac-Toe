@@ -25,8 +25,7 @@ function selectField(event) {
     return;
   }
   clickedField.textContent = players[playerNumber].symbol;
-  clickedField.classList.add("clicked");
-  clickedField.classList.add("deactivated-clicks");
+  clickedField.classList.add("clicked", "deactivated-clicks");
 
   const selectedRowId = clickedField.dataset.rowId - 1;
   const selectedColumnId = clickedField.dataset.columnId - 1;
@@ -112,8 +111,7 @@ function gameReset() {
     }
   }
   listItems.forEach((el) => {
-    el.classList.remove("deactivated-clicks");
-    el.classList.remove("clicked");
+    el.classList.remove("deactivated-clicks", "clicked");
     el.textContent = "";
   });
   endGameArticle.style.display = "none";
