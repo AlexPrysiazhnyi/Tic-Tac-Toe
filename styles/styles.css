@@ -45,3 +45,9 @@ button:hover {
 #start-new-game {
     margin-top: 0.5rem;
 }
+
+#start-new-game[disabled] {
+    background-color: rgb(140, 0, 255);
+    border-color: rgb(79,10,190);
+    cursor: not-allowed;
+}

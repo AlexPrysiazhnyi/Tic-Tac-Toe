@@ -3,6 +3,7 @@ function startNewGame() {
     alert("Please set up both player names!");
     return;
   }
+  startNewGameButton.disabled = true;
   gameReset();
   gameInterfaceSection.style.display = "block";
   activePlayerNameSpan.textContent = players[playerNumber].name;
@@ -98,6 +99,7 @@ function gameFinal(winnerId) {
 
   listItems.forEach((el) => (el.classList.add("deactivated-clicks")));
   currentPlayerTurn.style.display = "none";
+  startNewGameButton.disabled = false;
 }
 
 function gameReset() {
@@ -117,5 +119,5 @@ function gameReset() {
   endGameArticle.style.display = "none";
   currentPlayerTurn.style.display = "block";
   endGameArticle.firstElementChild.innerHTML =
-    'You won, <span id="player-winner">PLAYER NAME</span>!';
+    'You won, <span id="player-winner"></span>!';
 }
