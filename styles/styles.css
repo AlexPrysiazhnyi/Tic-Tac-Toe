@@ -41,3 +41,7 @@ button:hover {
     background-color: rgb(230, 201, 252);
     border-color: transparent;
 }
+
+#start-new-game {
+    margin-top: 0.5rem;
+}

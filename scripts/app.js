@@ -6,7 +6,11 @@ const inputElement = document.getElementById("playername");
 const errorParagraph = inputDiv.lastElementChild;
 const gameInterfaceSection = document.getElementById("game-interface");
 const gameBoardOrderedList = document.getElementById("game-board");
+const listItems = gameBoardOrderedList.querySelectorAll('li');
 const activePlayerNameSpan = document.getElementById("active-player");
+const currentPlayerTurn = activePlayerNameSpan.parentElement;
+const endGameArticle = document.getElementById("end-of-the-game");
+// const playerWinnerSpan = endGameArticle.querySelector("#player-winner");
 
 let playerNumber = 0;
 let projectId;

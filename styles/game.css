@@ -1,13 +1,13 @@
 #game-interface {
     text-align: center;
-    margin: 2rem 0 2rem 0;
-    /* display: none; */
+    margin: 1rem 0 2rem 0;
+    display: none;
 }
 
 #end-of-the-game {
     width: 90%;
     max-width: 40rem;
-    margin: auto;
+    margin: auto auto 2rem auto;
     padding: 1rem 2rem;
     background-color: rgb(50, 5, 87);
     color: white;
@@ -56,5 +56,8 @@
     background-color: rgb(112, 13, 204);
     color: white;
     cursor: default;
+}
+
+.deactivated-clicks {
     pointer-events: none;
 }
