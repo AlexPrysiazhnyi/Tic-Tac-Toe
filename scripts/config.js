@@ -28,5 +28,4 @@ function confirmPlayerConfig(event) {
 
   players[projectId - 1].name = playerName;
   closePlayerConfiguration();
-  console.log(players);
   }

@@ -35,13 +35,10 @@ function selectField(event) {
     gameFinal(winnerNumber);
   }
   switchPlayers();
-  console.log(winnerNumber);
 }
 
 function gameFinal(winnerId) {
   endGameArticle.style.display = "block";
-  console.log(endGameArticle.querySelector("#player-winner"));
-
   if (winnerId > 0) {
     endGameArticle.querySelector("#player-winner").textContent =
       players[winnerId - 1].name;
