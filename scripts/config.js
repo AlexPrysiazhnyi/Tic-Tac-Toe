@@ -1,24 +1,32 @@
-function openPlayerConfiguration(event) {
+import * as Variables from "./app.js";
+import {players} from "./game.js";
+
+const inputDiv = document.querySelector(".form-control");
+const errorParagraph = inputDiv.lastElementChild;
+
+let projectId;
+
+export const openPlayerConfiguration = (event) => {
   projectId = event.target.dataset.playerId.toString();
-  backdrop.style.display = "block";
-  playerConfigurationForm.style.display = "block";
+  Variables.backdrop.style.display = "block";
+  Variables.playerConfigurationForm.style.display = "block";
 }
 
-function closePlayerConfiguration() {
-  backdrop.style.display = "none";
-  playerConfigurationForm.style.display = "none";
+export const closePlayerConfiguration = () => {
+  Variables.backdrop.style.display = "none";
+  Variables.playerConfigurationForm.style.display = "none";
   errorParagraph.style.display = "none";
-  inputElement.classList.remove("error");
-  inputElement.value = "";
+  Variables.inputElement.classList.remove("error");
+  Variables.inputElement.value = "";
 }
 
-function confirmPlayerConfig(event) {
+export const confirmPlayerConfig = (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
   const playerName = formData.get("playername").trim();
 
   if (!playerName) {
-    inputElement.classList.add("error");
+    Variables.inputElement.classList.add("error");
     errorParagraph.style.display = "block";
     return;
   }
@@ -28,4 +36,4 @@ function confirmPlayerConfig(event) {
 
   players[projectId - 1].name = playerName;
   closePlayerConfiguration();
-  }
+}

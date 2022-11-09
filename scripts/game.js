@@ -1,4 +1,24 @@
-function startNewGame() {
+import {winnerCheck, trackingfFields} from "./winnerCheck.js";
+import {listItems, startNewGameButton} from "./app.js";
+
+const gameInterfaceSection = document.getElementById("game-interface");
+const activePlayerNameSpan = document.getElementById("active-player");
+const currentPlayerTurn = activePlayerNameSpan.parentElement;
+const endGameArticle = document.getElementById("end-of-the-game");
+
+let playerNumber = 0;
+export let roundNumber = 1;
+
+export const players = [
+  {
+    symbol: "X",
+  },
+  {
+    symbol: "O",
+  },
+];
+
+export const startNewGame = () => {
   if (!(players[0].name && players[1].name)) {
     alert("Please set up both player names!");
     return;
@@ -9,7 +29,7 @@ function startNewGame() {
   activePlayerNameSpan.textContent = players[playerNumber].name;
 }
 
-function switchPlayers() {
+const switchPlayers = () => {
   if (playerNumber === 0) {
     playerNumber = 1;
   } else {
@@ -19,7 +39,7 @@ function switchPlayers() {
   roundNumber++;
 }
 
-function selectField(event) {
+export const selectField = (event) => {
   const clickedField = event.target;
   if (clickedField.tagName !== "LI") {
     return;
@@ -37,7 +57,7 @@ function selectField(event) {
   switchPlayers();
 }
 
-function gameFinal(winnerId) {
+const gameFinal = (winnerId) => {
   endGameArticle.style.display = "block";
   if (winnerId > 0) {
     endGameArticle.querySelector("#player-winner").textContent =
@@ -51,7 +71,7 @@ function gameFinal(winnerId) {
   startNewGameButton.disabled = false;
 }
 
-function gameReset() {
+const gameReset = () => {
   playerNumber = 0;
   roundNumber = 1;
 

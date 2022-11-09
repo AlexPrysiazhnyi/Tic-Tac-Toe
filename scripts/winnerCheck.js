@@ -1,4 +1,12 @@
-function winnerCheck() {
+import {roundNumber} from "./game.js";
+
+export const trackingfFields = [
+  [0, 0, 0],
+  [0, 0, 0],
+  [0, 0, 0],
+];
+
+export const winnerCheck = () => {
     // Checking rows for a winner
     for (let i = 0; i < 3; i++) {
       if (
